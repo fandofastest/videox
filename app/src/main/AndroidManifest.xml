@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.funnyvideos.newvideos">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+
+
+    <application
+        android:name="com.funnyvideos.newvideos.activities.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppMaterialTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivitySplash"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivityUserLogin"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivityUserRegister"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivityProfile"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivityForgotPassword"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivityFullScreenImage"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivityComments"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivitySendComment"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivityUpdateComment"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivityReplyComment"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivityNewsDetail"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivityCategoryDetails"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivityPrivacyPolicy"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivityYoutubePlayer"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivityVideoPlayer"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivityWebView"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivityWebViewImage"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivityOneSignalDetail"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivityFCMDetail"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="com.funnyvideos.newvideos.activities.ActivitySearch"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="stateVisible" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+
+        <service android:name="com.funnyvideos.newvideos.fcm.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service android:name="com.funnyvideos.newvideos.fcm.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.funnyvideos.newvideos.utils.NotificationExtenderExample"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE">
+            <intent-filter>
+                <action android:name="com.onesignal.NotificationExtender" />
+            </intent-filter>
+        </service>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+    </application>
+
+</manifest>
